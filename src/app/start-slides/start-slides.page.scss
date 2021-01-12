@@ -1,0 +1,38 @@
+.body{
+    
+    --background: linear-gradient( rgb(65,238,238) 100%, rgb(0,179,243) 100%) ;
+
+}
+.slide-title{
+    margin-top: 141px;
+    text-transform: uppercase;
+    font-size: 34px;
+    color: #fbfbfb;
+}
+
+.slide-1{
+    width: 300px;
+    height: 170px;
+    margin-top: 35px;
+}
+.slider-para{
+    margin-top: 75px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 25% !important;
+    width: 344px;
+    height: 54px;
+    color: #fbfbfb;
+    
+}
+.startbutton{
+    --background:white;
+    color: #64c0f2 ;
+    text-transform: capitalize;
+    width: 346px;
+    height: 56px;
+}
+.para{
+    margin-left: auto;
+    margin-right: auto;
+}

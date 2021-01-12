@@ -1,0 +1,126 @@
+.title-box{
+    --background: linear-gradient( rgb(65,238,238) 100%, rgb(0,179,243) 100%) ;
+    height: 75px;
+}
+.head-title{
+    color: white;
+    text-align: end;
+    padding-top: 20px;
+    font-size: 15px;
+    text-transform: capitalize;
+    
+}
+.icn{
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    left: 10px;
+    
+}
+.icn-d-p{
+margin-left: 10px;
+margin-right: 10px;
+font-size: 14pt;
+}
+.t-delet{
+    text-decoration: none;
+    color: white;
+}
+.t-edit{
+    text-decoration: none;
+    color: white;
+}
+.slide-tittle{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
+.slide-img{
+    width: 100%;
+}
+.slide-box{
+    padding: 0;
+}
+.slide-icn{
+    margin-right: 10px;
+    color: #a6a6a6;
+    font-size: 16px;
+}
+.description-slide{
+    margin-left: 25px;
+    color: #a6a6a6;
+}
+.description-slide-span{
+    margin-left: 15px;
+    color: #42b72a;
+}
+#container{
+    text-align: center;
+    margin-top: 50px;
+    color: #a6a6a6;
+    text-transform: capitalize;
+}
+#container1{
+    text-align: center;
+    margin-top: 50px;
+    color: #a6a6a6;
+    text-transform: uppercase;
+}
+
+.container1-a{
+    text-decoration: none;
+    color: #07b6f3;
+}
+
+.description{
+    margin-left: 25px;
+    font-size: 18px;
+    color: #42b72a;
+}
+.desc-para{
+    margin-left: 25px;
+    font-size: 16px;
+    color: #a6a6a6;
+    line-height: 25px;
+}
+
+.icn-box{
+    display: flex;
+    position: absolute;
+}
+.row-icn{
+    border: 1px solid #07b6f3;
+    color: #07b6f3;
+    border-radius: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+    padding: 10px;
+}
+.leads-data-tittle{
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-left: 65px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+
+}
+.select-box{
+    margin: 0;
+    padding: 0;
+}
+.select-tittle{
+    display: contents;
+    letter-spacing: 1;
+    text-transform: capitalize;
+}
+.select-s{
+    position: absolute;
+    top: 2px;
+    left: 45px;
+    text-transform: lowercase;
+}
+ion-select{
+color: #20bdf4;
+}

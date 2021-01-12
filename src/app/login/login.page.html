@@ -1,0 +1,25 @@
+
+<ion-content>
+  
+  <div class="round">
+  </div>
+  <h1 class="tittle">kyle's open house</h1>
+
+  <ion-input type="text" placeholder="Email"  class="shadow1" name="email" [(ngModel)]="email">
+  <ion-icon name="mail-outline" slot="start" class="icn-input"></ion-icon></ion-input> 
+  
+  <ion-input type="text" placeholder="*******"   class="shadow2" name="password"  [(ngModel)]="password">
+  <ion-icon name="lock-closed-outline" slot="start" class="icn-input"></ion-icon></ion-input>
+
+  <a href="#">
+  <ion-button class="startbutton"  size="large" shape="round" (click)="login()" >
+  login</ion-button>
+  </a>
+
+  <a href="#" class="l-pasword">lost pasword?</a>
+  
+  <a routerLink="/registration" class="register">registration</a>
+
+
+  </ion-content>
+

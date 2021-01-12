@@ -1,0 +1,74 @@
+.title-box{
+    --background: linear-gradient( rgb(65,238,238) 100%, rgb(0,179,243) 100%) ;
+    height: 75px;
+}
+.head-title{
+    color: white;
+    text-align: end;
+    padding-top: 20px;
+    font-size: 15px;
+    text-transform: capitalize;
+    
+}
+.icn{
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    left: 10px;
+    
+}
+.icn-d-p{
+margin-left: 10px;
+margin-right: 10px;
+font-size: 14pt;
+}
+.t-delet{
+    text-decoration: none;
+    color: white;
+}
+.t-edit{
+    text-decoration: none;
+    color: white;
+}
+.slide-tittle{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
+.slide-img{
+    width: 100%;
+}
+.slide-box{
+    padding: 0;
+}
+.slide-icn{
+    margin-right: 10px;
+    color: #a6a6a6;
+    font-size: 16px;
+}
+.description-slide{
+    margin-left: 25px;
+    color: #a6a6a6;
+}
+.description-slide-span{
+    margin-left: 15px;
+    color: #42b72a;
+}
+#container{
+    text-align: center;
+    margin-top: 50px;
+    color: #a6a6a6;
+    text-transform: capitalize;
+}
+#container1{
+    text-align: center;
+    margin-top: 50px;
+    color: #a6a6a6;
+    text-transform: uppercase;
+}
+
+.container1-a{
+    text-decoration: none;
+    color: #07b6f3;
+}

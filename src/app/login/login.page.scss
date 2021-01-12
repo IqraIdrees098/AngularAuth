@@ -1,0 +1,71 @@
+.round{
+    width: 175px;
+    height: 175px;
+    
+    background: linear-gradient( rgb(65,238,238) 100%, rgb(0,179,243) 100%) ;
+    border-radius: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.tittle{
+    text-align: center;
+    font-size: 25px;
+    color: #73d4f1;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.shadow1{
+    justify-content: center;
+    text-align: center;
+    height: 62px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+.shadow2{
+    justify-content: center;
+    text-align: center;
+    height: 62px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.icn-input{
+    font-size: 28px;
+    color: #73d4f1;
+}
+.startbutton{
+width: 70%;
+height: 60px;
+--background: linear-gradient( rgb(65,238,238) 100%, rgb(0,179,243) 100%) ;
+text-align: center;
+text-transform: capitalize;
+margin-top: 25px;
+margin-left: auto;
+margin-right: auto;
+display: block;
+}
+a{
+    text-decoration: none;
+}
+.l-pasword{
+    color: #a6a6a6;
+    margin-top: 25px;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 15px;
+}
+.register{
+    color: #a6a6a6;
+    margin-top: 20%;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 15px;
+}

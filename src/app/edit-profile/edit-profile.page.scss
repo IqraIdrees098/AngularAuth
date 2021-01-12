@@ -1,0 +1,92 @@
+.title-box{
+    --background: linear-gradient( rgb(65,238,238) 100%, rgb(0,179,243) 100%) ;
+    height: 75px;
+}
+.head-title{
+    color: white;
+    text-align: start;
+    padding-top: 20px;
+    
+    text-transform: capitalize;
+}
+.icn{
+    font-size: 30px;
+    color: white;
+    margin-right: 20px;
+    
+}
+.round{
+    width: 175px;
+    height: 175px;
+    
+    background-color: #3d3d3d!important;
+    border-radius: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+.round2{
+    width: 30px;
+    height: 30px;
+    
+    background-color: #73d4f1!important;
+    border-radius: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 125px;
+    float: right;
+    margin-right: 29px;
+    border: 3px solid white;
+}
+.circule{
+    width: 60%;
+    margin-top: 4px;
+    margin-left: 5px;
+}
+.shadow1t{
+    text-align: start;
+    color: #4f4f4f;
+    font-size: 16px;
+    text-transform: capitalize;
+    width: 90%;
+    height: 60px;
+    border: 1px solid #e5e5e5;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
+.shadow1{
+    text-align: start;
+    color: #4f4f4f;
+    font-size: 16px;
+    text-transform: capitalize;
+    width: 90%;
+    height: 60px;
+    border: 1px solid #e5e5e5;
+    margin-left: auto;
+    margin-right: auto;
+}
+.icn-input{
+    font-size: 30px;
+    color: #73d4f1;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.last-p{
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: none;
+    margin-top: 145px;
+    color: #a6a6a6;
+    margin-left: auto;
+    margin-right: auto;
+}
+.avtar-img{
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: #3d3d3d!important;
+}

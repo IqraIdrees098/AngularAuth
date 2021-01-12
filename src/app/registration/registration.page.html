@@ -1,0 +1,33 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12"><h1 class="tittle">registration</h1></ion-col>
+      <ion-col size="12"><p class="sub-tittle">welcome to kyle's open house you need to register to start using the application </p></ion-col>
+
+  
+      <ion-col size="12">
+  <ion-input type="text" placeholder="first name"  class="shadow1t" name="fname" [(ngModel)]="fname">
+  <ion-icon name="person-outline" slot="start" class="icn-input"></ion-icon></ion-input> 
+     </ion-col>
+      <ion-col size="12">
+  <ion-input type="text" placeholder="user name"   class="shadow1" name="uname" [(ngModel)]="uname">
+  <ion-icon name="person-outline" slot="start" class="icn-input"></ion-icon></ion-input>
+  </ion-col>
+    <ion-col size="12"><ion-input type="text" placeholder="e-mail"  class="shadow1" name="email" [(ngModel)]="email"> 
+    <ion-icon name="mail-outline" slot="start" class="icn-input"></ion-icon></ion-input> 
+  </ion-col>
+      <ion-col size="12">
+  <ion-input type="text" placeholder="password"  class="shadow1" name="password" [(ngModel)]="password">
+  <ion-icon name="lock-closed-outline" slot="start" class="icn-input"></ion-icon></ion-input>
+ </ion-col>
+      <ion-col class="btn-box" size="12"><a href="#">
+<ion-button class="startbutton" size="large" shape="round" (click)="register()" >registration</ion-button></a>
+</ion-col>
+<ion-col class="l-p" size="12"><a routerLink="/login" class="l-pasword">already have an account?</a>
+</ion-col>
+  
+
+    </ion-row>
+    </ion-grid>
+  </ion-content>
+  
