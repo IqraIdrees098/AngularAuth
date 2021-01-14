@@ -17,8 +17,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+
 import { FormsModule } from '@angular/forms';
-import { AuthService } from './services/auth.service';
+import { AuthService } from './services/auth.service'; // auth service
+import { AuthGuard } from './shared/guard/auth.guard'; //auth guard
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,7 +38,7 @@ import { AuthService } from './services/auth.service';
   ],
 
   providers: [
-    StatusBar, AuthService,
+    StatusBar, AuthService, AuthGuard,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

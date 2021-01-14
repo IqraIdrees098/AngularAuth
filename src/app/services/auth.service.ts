@@ -46,9 +46,10 @@ export class AuthService {
           this.router.navigate(['/profile']);
         });
       //  this.SetUserData(result.user);
-      }).catch((error) => {
-        window.alert(error.message)
       })
+      .catch((error) => {
+        window.alert(error.message) 
+       })
   }
 
 
@@ -58,7 +59,7 @@ export class AuthService {
       .then((result) => {
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
-       this.SendVerificationMail();
+      // this.SendVerificationMail();
      //   this.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error.message)
@@ -67,48 +68,48 @@ export class AuthService {
 
 
 
-   // Send email verfificaiton when new user sign up
-   async SendVerificationMail() {
-    return (await this.afAuth.currentUser).sendEmailVerification()
-    .then(() => {
-      this.router.navigate(['verify-email-address']);
-    })
-  }
+  //  // Send email verfificaiton when new user sign up
+  //  async SendVerificationMail() {
+  //   return (await this.afAuth.currentUser).sendEmailVerification()
+  //   .then(() => {
+  //     this.router.navigate(['verify-email-address']);
+  //   })
+  // }
 
   // Reset Forggot password
-  ForgotPassword(passwordResetEmail) {
-    return this.afAuth.sendPasswordResetEmail(passwordResetEmail)
-    .then(() => {
-      window.alert('Password reset email sent, check your inbox.');
-    }).catch((error) => {
-      window.alert(error)
-    })
-  }
+  // ForgotPassword(passwordResetEmail) {
+  //   return this.afAuth.sendPasswordResetEmail(passwordResetEmail)
+  //   .then(() => {
+  //     window.alert('Password reset email sent, check your inbox.');
+  //   }).catch((error) => {
+  //     window.alert(error)
+  //   })
+  // }
 
    // Returns true when user is looged in and email is verified
-   get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null && user.emailVerified !== false) ? true : false;
-  }
+  //  get isLoggedIn(): boolean {
+  //   const user = JSON.parse(localStorage.getItem('user'));
+  //   return (user !== null && user.emailVerified !== false) ? true : false;
+  // }
 
     // Sign in with Google
-    GoogleAuth() {
-      return this.AuthLogin(new firebase.auth.GoogleAuthProvider());
-    }
+    // GoogleAuth() {
+    //   return this.AuthLogin(new firebase.auth.GoogleAuthProvider());
+    // }
 
     
       // Auth logic to run auth providers
-  AuthLogin(provider) {
-    return this.afAuth.signInWithPopup(provider)
-    .then((result) => {
-       this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
-        })
-    //  this.SetUserData(result.user);
-    }).catch((error) => {
-      window.alert(error)
-    })
-  }
+  // AuthLogin(provider) {
+  //   return this.afAuth.signInWithPopup(provider)
+  //   .then((result) => {
+  //      this.ngZone.run(() => {
+  //         this.router.navigate(['dashboard']);
+  //       })
+  //   //  this.SetUserData(result.user);
+  //   }).catch((error) => {
+  //     window.alert(error)
+  //   })
+  // }
 
 
     /* Setting up user data when sign in with username/password,
@@ -129,13 +130,21 @@ export class AuthService {
 //   } 
 
     // Sign out
-    SignOut() {
-      return this.afAuth.signOut().then(() => {
-        localStorage.removeItem('user');
-        this.router.navigate(['sign-in']);
-      })
-    }
+    // SignOut() {
+    //   return this.afAuth.signOut().then(() => {
+    //     localStorage.removeItem('user');
+    //     this.router.navigate(['sign-in']);
+    //   })
+    // }
   
+
+   isUserLoggedIn(){          //auth guard 
+        return false;
+   }
+
+
+
+
 
 
 

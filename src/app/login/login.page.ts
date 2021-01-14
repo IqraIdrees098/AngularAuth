@@ -9,21 +9,24 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  email = "";
-  password = "";
+form : any = {};
 
+
+ 
 
   constructor(private authservice: AuthService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 
-  login()
+  onSubmit()
   {
-   this.authservice.SignIn(this.email,this.password);
-  
+      console.log('email'+ this.form.email);
+      console.log('password'+ this.form.password);
   }
+
+
+
 
 
 }

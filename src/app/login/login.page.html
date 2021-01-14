@@ -5,16 +5,30 @@
   </div>
   <h1 class="tittle">kyle's open house</h1>
 
-  <ion-input type="text" placeholder="Email"  class="shadow1" name="email" [(ngModel)]="email">
+  <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+  <ion-input type="text" placeholder="Email"   class="shadow1" name="email"
+   [(ngModel)]="form.email"  #email="ngModel" required email>
   <ion-icon name="mail-outline" slot="start" class="icn-input"></ion-icon></ion-input> 
-  
-  <ion-input type="text" placeholder="*******"   class="shadow2" name="password"  [(ngModel)]="password">
+  <div class="ion-text-center ion-padding-vertical"  *ngIf="f.submitted && email.invalid">
+  <span *ngIf="email.errors.required"><ion-text color="danger">required</ion-text></span>
+  <span *ngIf="email.errors.email"><ion-text color="danger">Must be a valid Email address</ion-text></span>
+  </div>
+
+  <ion-input type="text" placeholder="*******"  class="shadow2" name="password" required minlength="6" 
+   [(ngModel)]="form.password" #password="ngModel">
   <ion-icon name="lock-closed-outline" slot="start" class="icn-input"></ion-icon></ion-input>
+  <div class="ion-text-center ion-padding-vertical" *ngIf="f.submitted && password.invalid">
+  <span *ngIf="password.errors.required"><ion-text color="danger">required</ion-text></span>
+  <span *ngIf="password.errors.minlength"><ion-text color="danger">Must be at least 6 characters</ion-text></span>
+  </div>
 
   <a href="#">
-  <ion-button class="startbutton"  size="large" shape="round" (click)="login()" >
+  <ion-button class="startbutton"  size="large" shape="round" type="submit">
   login</ion-button>
   </a>
+
+ </form>
 
   <a href="#" class="l-pasword">lost pasword?</a>
   
