@@ -1,33 +1,62 @@
 <ion-content>
+  <form name="form" (ngSubmit)="f.form.valid && onRegister()" #f="ngForm" novalidate>
+
   <ion-grid>
     <ion-row>
       <ion-col size="12"><h1 class="tittle">registration</h1></ion-col>
       <ion-col size="12"><p class="sub-tittle">welcome to kyle's open house you need to register to start using the application </p></ion-col>
 
-  
+     
       <ion-col size="12">
-  <ion-input type="text" placeholder="first name"  class="shadow1t" name="fname" [(ngModel)]="fname">
+  <ion-input type="text" placeholder="first name"  class="shadow1t" name="fname"
+  [(ngModel)]="form.fname"  #fname="ngModel" required fname >
   <ion-icon name="person-outline" slot="start" class="icn-input"></ion-icon></ion-input> 
+  <div class="ion-text-center ion-padding-vertical"  *ngIf="f.submitted && fname.invalid">
+    <span *ngIf="fname.errors.required"><ion-text color="danger">required</ion-text></span>
+    </div>
      </ion-col>
+
+
       <ion-col size="12">
-  <ion-input type="text" placeholder="user name"   class="shadow1" name="uname" [(ngModel)]="uname">
+  <ion-input type="text" placeholder="user name"   class="shadow1" name="uname" 
+  [(ngModel)]="form.uname"  #uname="ngModel" required uname>
   <ion-icon name="person-outline" slot="start" class="icn-input"></ion-icon></ion-input>
+  <div class="ion-text-center ion-padding-vertical"  *ngIf="f.submitted && uname.invalid">
+    <span *ngIf="uname.errors.required"><ion-text color="danger">required</ion-text></span>
+    </div>
   </ion-col>
-    <ion-col size="12"><ion-input type="text" placeholder="e-mail"  class="shadow1" name="email" [(ngModel)]="email"> 
+
+
+    <ion-col size="12"><ion-input type="text" placeholder="e-mail"  class="shadow1" name="email" 
+      [(ngModel)]="form.email"  #email="ngModel" required email> 
     <ion-icon name="mail-outline" slot="start" class="icn-input"></ion-icon></ion-input> 
+    <div class="ion-text-center ion-padding-vertical"  *ngIf="f.submitted && email.invalid">
+      <span *ngIf="email.errors.required"><ion-text color="danger">required</ion-text></span>
+      <span *ngIf="email.errors.email"><ion-text color="danger">Must be a valid Email address</ion-text></span>
+      </div>
   </ion-col>
+
+
       <ion-col size="12">
-  <ion-input type="text" placeholder="password"  class="shadow1" name="password" [(ngModel)]="password">
+  <ion-input type="text" placeholder="password"  class="shadow1" name="password" 
+  [(ngModel)]="form.password"  #password="ngModel" required minlength="6" >
   <ion-icon name="lock-closed-outline" slot="start" class="icn-input"></ion-icon></ion-input>
+  <div class="ion-text-center ion-padding-vertical"  *ngIf="f.submitted && password.invalid">
+    <span *ngIf="password.errors.required"><ion-text color="danger">required</ion-text></span>
+    <span *ngIf="password.errors.minlength"><ion-text color="danger">Must be at least 6 characters</ion-text></span>
+    </div>
  </ion-col>
+
       <ion-col class="btn-box" size="12"><a href="#">
-<ion-button class="startbutton" size="large" shape="round" (click)="register()" >registration</ion-button></a>
+<ion-button class="startbutton" size="large" shape="round" type="submit" >registration</ion-button></a>
 </ion-col>
 <ion-col class="l-p" size="12"><a routerLink="/login" class="l-pasword">already have an account?</a>
 </ion-col>
   
+     
 
     </ion-row>
     </ion-grid>
+  </form>
   </ion-content>
   

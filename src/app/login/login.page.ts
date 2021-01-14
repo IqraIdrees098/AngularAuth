@@ -10,8 +10,6 @@ import { Router } from '@angular/router';
 export class LoginPage implements OnInit {
 
 form : any = {};
-
-
  
 
   constructor(private authservice: AuthService, private router: Router) { }
@@ -21,12 +19,8 @@ form : any = {};
 
   onSubmit()
   {
-      console.log('email'+ this.form.email);
-      console.log('password'+ this.form.password);
+      this.authservice.SignIn(this.form.email,this.form.password)
   }
-
-
-
 
 
 }

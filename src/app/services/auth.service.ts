@@ -8,6 +8,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { Router } from "@angular/router";
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +16,7 @@ import { Router } from "@angular/router";
 export class AuthService {
 
   userData: any; // Save logged in user data
+ 
 
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
@@ -32,6 +34,7 @@ export class AuthService {
         JSON.parse(localStorage.getItem('user'));
       } else {
         localStorage.setItem('user', null);
+        
         JSON.parse(localStorage.getItem('user'));
       }
     })
@@ -42,109 +45,42 @@ export class AuthService {
   SignIn(email, password) {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
-        this.ngZone.run(() => {
-          this.router.navigate(['/profile']);
-        });
-      //  this.SetUserData(result.user);
+      this.router.navigate(['/profile']);
+      console.log("work")
       })
-      .catch((error) => {
+      .catch((error) => {      
         window.alert(error.message) 
+        this.router.navigate(['/login'])
+        console.log("not work")
        })
   }
 
 
   // Sign up with email/password
-  SignUp(fname,uname, email, password) {
-    return this.afAuth.createUserWithEmailAndPassword(email, password)
+  SignUp(email,password,uname,fname) {
+    return this.afAuth.createUserWithEmailAndPassword(email,password)
       .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign
-        up and returns promise */
-      // this.SendVerificationMail();
-     //   this.SetUserData(result.user);
+        this.afs.collection('User').add({
+             useremail:email,
+             userpassword:password,
+             userId:result.user.uid,
+             username:uname,
+             firstname:fname
+        })
+        this.router.navigate(['/profile'])
+        console.log("work")
       }).catch((error) => {
         window.alert(error.message)
+        this.router.navigate(['/register'])
+        console.log("not work")
       })
   }
 
 
-
-  //  // Send email verfificaiton when new user sign up
-  //  async SendVerificationMail() {
-  //   return (await this.afAuth.currentUser).sendEmailVerification()
-  //   .then(() => {
-  //     this.router.navigate(['verify-email-address']);
-  //   })
-  // }
-
-  // Reset Forggot password
-  // ForgotPassword(passwordResetEmail) {
-  //   return this.afAuth.sendPasswordResetEmail(passwordResetEmail)
-  //   .then(() => {
-  //     window.alert('Password reset email sent, check your inbox.');
-  //   }).catch((error) => {
-  //     window.alert(error)
-  //   })
-  // }
-
-   // Returns true when user is looged in and email is verified
-  //  get isLoggedIn(): boolean {
-  //   const user = JSON.parse(localStorage.getItem('user'));
-  //   return (user !== null && user.emailVerified !== false) ? true : false;
-  // }
-
-    // Sign in with Google
-    // GoogleAuth() {
-    //   return this.AuthLogin(new firebase.auth.GoogleAuthProvider());
-    // }
-
-    
-      // Auth logic to run auth providers
-  // AuthLogin(provider) {
-  //   return this.afAuth.signInWithPopup(provider)
-  //   .then((result) => {
-  //      this.ngZone.run(() => {
-  //         this.router.navigate(['dashboard']);
-  //       })
-  //   //  this.SetUserData(result.user);
-  //   }).catch((error) => {
-  //     window.alert(error)
-  //   })
-  // }
-
-
-    /* Setting up user data when sign in with username/password,
-  sign up with username/password and sign in with social auth
-  provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-//  SetUserData(user) {
-//     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-//     const userData: User = {
-//       uid: user.uid,
-//       email: user.email,
-//       displayName: user.displayName,
-//       photoURL: user.photoURL,
-//       emailVerified: user.emailVerified
-//     }
-//     return userRef.set(userData, {
-//       merge: true
-//     })
-//   } 
-
-    // Sign out
-    // SignOut() {
-    //   return this.afAuth.signOut().then(() => {
-    //     localStorage.removeItem('user');
-    //     this.router.navigate(['sign-in']);
-    //   })
-    // }
-  
-
-   isUserLoggedIn(){          //auth guard 
+   //auth guard 
+   isUserLoggedIn(){          
         return false;
    }
-
-
-
-
 
 
 
